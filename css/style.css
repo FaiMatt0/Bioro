@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F7F3;
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-pattern {
+    background-image: radial-gradient(circle, rgba(42, 95, 45, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sustainability-icon {
+    transition: all 0.3s ease;
+}
+
+.sustainability-item:hover .sustainability-icon {
+    transform: scale(1.1);
+    color: #E3B448;
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2C5F2D;
+}
+
+.counter-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.counter-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Text Animation Classes */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+.text-focus-in {
+    opacity: 0;
+    animation: textFocusIn 1s ease-out forwards;
+}
+
+.animated-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #97BC62;
+    transition: width 0.5s ease;
+}
+
+.animated-underline:hover::after {
+    width: 100%;
+}
+
+.highlight-text {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-text::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 10px;
+    bottom: 5px;
+    left: 0;
+    background-color: rgba(151, 188, 98, 0.3);
+    z-index: -1;
+    transition: width 0.6s ease;
+}
+
+.highlight-text.active::before {
+    width: 100%;
+}
+
+/* Staggered animation for lists */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stagger-item:nth-child(1) { animation: staggerIn 0.5s ease-out 0.1s forwards; }
+.stagger-item:nth-child(2) { animation: staggerIn 0.5s ease-out 0.2s forwards; }
+.stagger-item:nth-child(3) { animation: staggerIn 0.5s ease-out 0.3s forwards; }
+.stagger-item:nth-child(4) { animation: staggerIn 0.5s ease-out 0.4s forwards; }
+.stagger-item:nth-child(5) { animation: staggerIn 0.5s ease-out 0.5s forwards; }
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes textFocusIn {
+    0% { opacity: 0; filter: blur(12px); transform: scale(1.2); }
+    100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+@keyframes staggerIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo Animation */
+@keyframes gentle-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo-pulse:hover {
+    animation: gentle-pulse 1.5s infinite ease-in-out;
+}
+
+.logo-container {
+    transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+    filter: drop-shadow(0 0 4px rgba(151, 188, 98, 0.7));
+}
+
+/* Logo Animation */
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.logo-bounce:hover {
+    animation: gentle-bounce 0.8s ease infinite;
+}
+
+@keyframes logo-glow {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); }
+    50% { filter: drop-shadow(0 0 5px rgba(151, 188, 98, 0.8)); }
+}
+
+.logo-glow:hover {
+    animation: logo-glow 2s ease infinite;
+}
+
+/* Delay classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Intersection Observer Utilities */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti - Bioro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F2D',
+                        secondary: '#97BC62',
+                        accent: '#E3B448',
+                        dark: '#1A3A1F',
+                        light: '#F5F7F3',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-dark">
+    <!-- Header -->
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2 group transition-transform hover:scale-105 duration-300 cursor-pointer">
+                    <img src="images/logo.png" alt="Bioro Logo" class="h-10 group-hover:animate-pulse transition-all">
+
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="products.html" class="hover:text-secondary transition">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition">Contatti</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="hover:text-secondary transition relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="absolute -top-2 -right-2 bg-secondary text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </a>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-dark w-full py-4 px-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="products.html" class="hover:text-secondary transition py-2">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition py-2">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition py-2">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition py-2">Contatti</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Products Page Hero -->
+        <section class="py-16 bg-light">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="title-font text-4xl md:text-5xl font-bold mb-6">I Nostri Prodotti</h1>
+                <p class="max-w-2xl mx-auto text-gray-600 mb-8">
+                    Scopri la nostra selezione di vaniglia Bourbon del Madagascar, coltivata con metodi tradizionali e confezionata per preservarne l'aroma intenso.
+                </p>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="px-6 py-2 bg-primary text-white rounded-full">Tutti</button>
+                    <button class="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition">Bacche</button>
+                    <button class="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition">Semi e Caviale</button>
+                    <button class="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition">Polveri</button>
+                    <button class="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition">Kit e Confezioni Regalo</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Bacche di vaniglia Bourbon" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Bacche di Vaniglia Bourbon</h3>
+                            <p class="text-gray-600 mb-4">Bacche selezionate a mano, umide e carnose con un aroma intenso e persistente.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€24,90</span>
+                                <a href="product-bacche.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569166289-1d8b47df575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Caviale di vaniglia Bourbon" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Caviale di Vaniglia Bourbon</h3>
+                            <p class="text-gray-600 mb-4">Semi di vaniglia estratti a mano, perfetti per una distribuzione uniforme del sapore.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€32,90</span>
+                                <a href="product-caviale.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Polvere di vaniglia Bourbon" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Polvere di Vaniglia Bourbon</h3>
+                            <p class="text-gray-600 mb-4">Vaniglia macinata finemente per un uso immediato in dolci e bevande.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€18,90</span>
+                                <a href="product-polvere.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Kit di Vaniglia Bourbon" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Kit Vaniglia Bourbon</h3>
+                            <p class="text-gray-600 mb-4">Set completo con bacche, caviale e polvere in un'elegante confezione.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€65,90</span>
+                                <a href="product-kit.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Estratto di Vaniglia Bourbon" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Estratto di Vaniglia Bourbon</h3>
+                            <p class="text-gray-600 mb-4">Estratto puro di vaniglia, ideale per aromatizzare impasti e creme.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€28,90</span>
+                                <a href="product-estratto.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1603569166289-1d8b47df575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Confezione Regalo Vaniglia" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                BIO
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font text-xl font-bold mb-2">Confezione Regalo Gourmand</h3>
+                            <p class="text-gray-600 mb-4">Elegante box con una selezione dei nostri migliori prodotti alla vaniglia.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-bold text-xl">€89,90</span>
+                                <a href="product-regalo.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                    Scopri di più
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-light">
+            <div class="container mx-auto px-4">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-12 text-center">Cosa Dicono i Nostri Clienti</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="flex justify-center mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">
+                            "La vaniglia Bioro è semplicemente la migliore che abbia mai usato nei miei dessert. L'aroma è così intenso che ne basta pochissima."
+                        </p>
+                        <p class="font-medium">Chef Marco Bianchi</p>
+                        <p class="text-sm text-gray-500">Pasticceria Dolce Vita, Milano</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="flex justify-center mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">
+                            "Adoro il fatto che oltre ad acquistare un prodotto eccezionale, sto anche sostenendo comunità in Madagascar. La trasparenza di Bioro è ammirevole."
+                        </p>
+                        <p class="font-medium">Giulia Rossi</p>
+                        <p class="text-sm text-gray-500">Food blogger</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="flex justify-center mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">
+                            "Ho ricevuto il Kit Vaniglia come regalo e sono rimasto stupito dalla differenza rispetto alla vaniglia che usavo prima. Non tornerò più indietro!"
+                        </p>
+                        <p class="font-medium">Luca Verdi</p>
+                        <p class="text-sm text-gray-500">Appassionato di cucina</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <div class="bg-light rounded-lg p-8 shadow-md">
+                    <h2 class="title-font text-2xl md:text-3xl font-bold mb-4">Ricevi Offerte Esclusive</h2>
+                    <p class="mb-6 text-gray-600 max-w-2xl mx-auto">
+                        Iscriviti alla nostra newsletter per ricevere codici sconto, ricette gourmet e novità sui prodotti.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="La tua email" class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full font-medium transition whitespace-nowrap">
+                            Iscriviti
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <a href="index.html" class="flex items-center space-x-2 group hover:opacity-80 transition-opacity">
+                            <img src="images/logo.png" alt="Bioro Logo" class="h-8">
+                        </a>
+                    </div>
+                    <p class="mb-4 text-light">
+                        Vaniglia Bourbon del Madagascar, coltivata con rispetto per le persone e l'ambiente.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Rest of footer content same as index.html -->
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-light text-sm mb-4 md:mb-0">
+                    &copy; 2025 Bioro. Tutti i diritti riservati.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Termini e Condizioni</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Spedizioni</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

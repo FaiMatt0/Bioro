@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Bioro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F2D',
+                        secondary: '#97BC62',
+                        accent: '#E3B448',
+                        dark: '#1A3A1F',
+                        light: '#F5F7F3',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-dark">
+    <!-- Header -->
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2 group transition-transform hover:scale-105 duration-300 cursor-pointer">
+                    <img src="images/logo.png" alt="Bioro Logo" class="h-10 group-hover:animate-pulse transition-all">
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="products.html" class="hover:text-secondary transition">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition">Contatti</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="hover:text-secondary transition relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="absolute -top-2 -right-2 bg-secondary text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </a>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-dark w-full py-4 px-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="products.html" class="hover:text-secondary transition py-2">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition py-2">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition py-2">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition py-2">Contatti</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Hero -->
+        <section class="py-20 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="title-font text-4xl md:text-5xl font-bold mb-6">Contattaci</h1>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">
+                        Siamo qui per rispondere a qualsiasi domanda sui nostri prodotti, la nostra missione o come collaborare con noi.
+                    </p>
+                    <div class="w-24 h-1 bg-primary mx-auto"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information and Form -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <!-- Contact Info -->
+                    <div class="md:w-1/3">
+                        <h2 class="title-font text-2xl font-bold mb-6">Come Contattarci</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-white mt-1 mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Indirizzo</h3>
+                                    <p class="text-gray-700">Via della Vaniglia 12<br>20123 Milano, Italia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-white mt-1 mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Telefono</h3>
+                                    <p class="text-gray-700">+39 02 1234567</p>
+                                    <p class="text-gray-700 text-sm">Lun-Ven: 9:00-18:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-white mt-1 mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Email</h3>
+                                    <p class="text-gray-700">info@bioro.com</p>
+                                    <p class="text-gray-700 text-sm">Risposta entro 24 ore</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-white mt-1 mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Orari di Apertura</h3>
+                                    <p class="text-gray-700">Lunedì - Venerdì: 9:00 - 18:00</p>
+                                    <p class="text-gray-700">Sabato: 10:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-bold mb-4">Seguici sui Social</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary hover:bg-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-primary hover:bg-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-primary hover:bg-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-primary hover:bg-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="md:w-2/3">
+                        <div class="bg-light p-8 rounded-lg shadow-md">
+                            <h2 class="title-font text-2xl font-bold mb-6">Inviaci un Messaggio</h2>
+                            
+                            <form>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome*</label>
+                                        <input type="text" id="name" name="name" required 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                                        <input type="email" id="email" name="email" required 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Oggetto</label>
+                                    <input type="text" id="subject" name="subject" 
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Messaggio*</label>
+                                    <textarea id="message" name="message" rows="5" required 
+                                              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" name="privacy" required class="rounded text-primary focus:ring-primary">
+                                        <span class="ml-2 text-sm text-gray-700">
+                                            Ho letto e accetto la <a href="#" class="text-primary hover:underline">Privacy Policy</a>*
+                                        </span>
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="bg-primary hover:bg-dark text-white px-8 py-4 rounded-full font-medium transition shadow-lg">
+                                    Invia Messaggio
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map -->
+        <section class="py-16 bg-light">
+            <div class="container mx-auto px-4">
+                <h2 class="title-font text-3xl font-bold mb-8 text-center">Dove Trovarci</h2>
+                
+                <div class="h-96 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                    <!-- Replace with actual map embed code -->
+                    <div class="w-full h-full flex items-center justify-center bg-gray-200">
+                        <p class="text-gray-600">Mappa Google qui</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <a href="index.html" class="flex items-center space-x-2 group hover:opacity-80 transition-opacity">
+                            <img src="images/logo.png" alt="Bioro Logo" class="h-8">
+                        </a>
+                    </div>
+                    <p class="mb-4 text-light">
+                        Vaniglia Bourbon del Madagascar, coltivata con rispetto per le persone e l'ambiente.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Prodotti</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-bacche.html" class="text-light hover:text-secondary transition">Bacche di Vaniglia</a></li>
+                        <li><a href="product-caviale.html" class="text-light hover:text-secondary transition">Caviale di Vaniglia</a></li>
+                        <li><a href="product-polvere.html" class="text-light hover:text-secondary transition">Polvere di Vaniglia</a></li>
+                        <li><a href="products.html" class="text-light hover:text-secondary transition">Tutti i Prodotti</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Azienda</h3>
+                    <ul class="space-y-2">
+                        <li><a href="story.html" class="text-light hover:text-secondary transition">Chi Siamo</a></li>
+                        <li><a href="sustainability.html" class="text-light hover:text-secondary transition">Sostenibilità</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Blog</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Lavora con Noi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Contatti</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-secondary"></i>
+                            <span class="text-light">Via della Vaniglia 12, Milano</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-secondary"></i>
+                            <span class="text-light">+39 02 1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-secondary"></i>
+                            <span class="text-light">info@bioro.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-light text-sm mb-4 md:mb-0">
+                    &copy; 2025 Bioro. Tutti i diritti riservati.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Termini e Condizioni</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Spedizioni</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioro - Vaniglia Bourbon del Madagascar Sostenibile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F2D',
+                        secondary: '#97BC62',
+                        accent: '#E3B448',
+                        dark: '#1A3A1F',
+                        light: '#F5F7F3',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-dark">
+    <!-- Header -->
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-md" style="background-image: url('images/front page 2.jpg'); background-size: cover; background-position: center; position: relative;">
+        <!-- Overlay for better text visibility -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(44, 95, 45, 0.85); z-index: -1;"></div>
+        
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="images/logo.png" alt="Bioro Logo" class="h-10">
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="products.html" class="hover:text-secondary transition">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition">Contatti</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-secondary transition"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="hover:text-secondary transition relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="absolute -top-2 -right-2 bg-secondary text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </a>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-dark w-full py-4 px-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="products.html" class="hover:text-secondary transition py-2">Prodotti</a>
+                <a href="sustainability.html" class="hover:text-secondary transition py-2">Sostenibilità</a>
+                <a href="story.html" class="hover:text-secondary transition py-2">La Nostra Storia</a>
+                <a href="contact.html" class="hover:text-secondary transition py-2">Contatti</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content (changes based on page) -->
+    <main>
+        <!-- Homepage Content -->
+        <div id="home-content">
+            <!-- Hero Section -->
+            <section class="hero-pattern bg-light" style="background-image: url('images/front page 2.jpg'); background-size: cover; background-position: center; position: relative;">
+                <!-- Overlay for better text visibility -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.85); z-index: 0;"></div>
+                
+                <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center relative z-10">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Vaniglia Bourbon <span class="text-primary">100%</span> Sostenibile
+                        </h1>
+                        <p class="text-lg mb-8 max-w-lg">
+                            Coltivata con amore in Madagascar, la nostra vaniglia sostiene le comunità locali e preserva l'ecosistema.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="products.html" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full font-medium transition shadow-lg">
+                                Scopri i Prodotti
+                            </a>
+                            <a href="sustainability.html" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-medium transition">
+                                La Nostra Missione
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <img src="images/front page 3.png"
+                                 alt="Bacche di vaniglia Bourbon del Madagascar" 
+                                 class="rounded-lg shadow-xl w-full max-w-md border-4 border-white">
+                            <div class="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg shadow-lg">
+                                <p class="font-bold">Freschezza Garantita</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section id="products" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="title-font text-3xl md:text-4xl font-bold mb-4">I Nostri Prodotti Premium</h2>
+                        <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                        <p class="max-w-2xl mx-auto text-gray-600">
+                            Vaniglia Bourbon del Madagascar, coltivata con metodi tradizionali e confezionata con cura per preservarne l'aroma intenso.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Product 1 -->
+                        <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="images/prodotto 1.jpg" 
+                                     alt="Bacche di vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Bacche di Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Bacche selezionate a mano, umide e carnose con un aroma intenso e persistente.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€24,90</span>
+                                    <a href="product-bacche.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="images/prodotto 2.png" 
+                                     alt="Caviale di vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Caviale di Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Semi di vaniglia estratti a mano, perfetti per una distribuzione uniforme del sapore.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€32,90</span>
+                                    <a href="product-caviale.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="images/prodotto 3.png" 
+                                     alt="Polvere di vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Polvere di Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Vaniglia macinata finemente per un uso immediato in dolci e bevande.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€18,90</span>
+                                    <a href="product-polvere.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <a href="products.html" class="inline-flex items-center text-primary font-medium hover:text-dark transition">
+                            Vedi tutti i prodotti <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sustainability Preview -->
+            <section id="about" class="py-16 bg-primary text-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-focus-in">Sostenibilità e <span class="highlight-text active">Impatto Sociale</span></h2>
+                        <div class="w-24 h-1 bg-secondary mx-auto mb-6 slide-up delay-200"></div>
+                        <p class="max-w-2xl mx-auto text-light fade-in delay-300">
+                            In Bioro crediamo in un commercio equo che rispetti sia la natura che le persone che lavorano con noi.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="sustainability-item bg-dark p-6 rounded-lg text-center reveal">
+                            <div class="sustainability-icon text-4xl mb-4 text-secondary">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="title-font text-xl font-bold mb-3">Commercio Equo</h3>
+                            <p class="text-light">
+                                Paghiamo i nostri coltivatori il 30% in più rispetto al prezzo di mercato per garantire condizioni di vita dignitose.
+                            </p>
+                        </div>
+                        
+                        <div class="sustainability-item bg-dark p-6 rounded-lg text-center reveal">
+                            <div class="sustainability-icon text-4xl mb-4 text-secondary">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="title-font text-xl font-bold mb-3">Agricoltura Biologica</h3>
+                            <p class="text-light">
+                                Nessun pesticida o fertilizzante chimico. Usiamo solo metodi naturali per preservare l'ecosistema del Madagascar.
+                            </p>
+                        </div>
+                        
+                        <div class="sustainability-item bg-dark p-6 rounded-lg text-center reveal">
+                            <div class="sustainability-icon text-4xl mb-4 text-secondary">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <h3 class="title-font text-xl font-bold mb-3">Sostegno alle Comunità</h3>
+                            <p class="text-light">
+                                Il 5% di ogni vendita viene reinvestito in scuole e infrastrutture nei villaggi dei coltivatori.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <a href="sustainability.html" class="inline-flex items-center text-secondary font-medium hover:text-accent transition animated-underline">
+                            Scopri di più sul nostro impegno <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Story Preview -->
+            <section id="story" class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 reveal">
+                            <img src="images/coltivazione.jpg" 
+                                 alt="Coltivazione di vaniglia in Madagascar" 
+                                 class="rounded-lg shadow-lg w-full">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h2 class="title-font text-3xl md:text-4xl font-bold mb-6 slide-in-right">La Nostra <span class="highlight-text">Storia</span></h2>
+                            <p class="mb-4 text-gray-700 fade-in delay-200 stagger-item">
+                                Bioro nasce nel 2015 dall'incontro tra la passione per la vaniglia di qualità e il desiderio di creare un impatto positivo in Madagascar.
+                            </p>
+                            <p class="mb-4 text-gray-700 fade-in delay-300 stagger-item">
+                                Dopo aver visitato le piantagioni e conosciuto i coltivatori locali, abbiamo deciso di creare una filiera trasparente che valorizzasse il duro lavoro dietro ogni bacca di vaniglia.
+                            </p>
+                            <p class="mb-6 text-gray-700 fade-in delay-400 stagger-item">
+                                Oggi lavoriamo con oltre 200 piccoli coltivatori nella regione di Sava, garantendo loro un reddito stabile e migliorando le condizioni delle loro comunità.
+                            </p>
+                            <a href="story.html" class="inline-flex items-center text-primary font-medium hover:text-dark transition animated-underline">
+                                Leggi la nostra storia completa <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4 max-w-4xl text-center">
+                    <div class="bg-light rounded-lg p-8 shadow-md">
+                        <h2 class="title-font text-2xl md:text-3xl font-bold mb-4">Rimani Aggiornato</h2>
+                        <p class="mb-6 text-gray-600 max-w-2xl mx-auto">
+                            Iscriviti alla nostra newsletter per ricevere sconti esclusivi, storie dai nostri coltivatori e novità sui prodotti.
+                        </p>
+                        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                            <input type="email" placeholder="La tua email" class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <button type="submit" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full font-medium transition whitespace-nowrap">
+                                Iscriviti
+                            </button>
+                        </form>
+                        <p class="mt-4 text-xs text-gray-500">
+                            Rispettiamo la tua privacy. Puoi annullare l'iscrizione in qualsiasi momento.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Product Detail Page (hidden by default) -->
+        <div id="product-detail-content" class="hidden">
+            <!-- Example for Bacche di Vaniglia - other products would have similar structure -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <div class="md:w-1/2">
+                            <div class="sticky top-24">
+                                <div class="mb-6 rounded-lg overflow-hidden shadow-lg">
+                                    <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                         alt="Bacche di vaniglia Bourbon" 
+                                         class="w-full h-auto">
+                                </div>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <div class="border rounded cursor-pointer">
+                                        <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                                             alt="Bacche di vaniglia Bourbon" 
+                                             class="w-full h-20 object-cover">
+                                    </div>
+                                    <div class="border rounded cursor-pointer">
+                                        <img src="https://images.unsplash.com/photo-1603569166289-1d8b47df575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                                             alt="Bacche di vaniglia Bourbon" 
+                                             class="w-full h-20 object-cover">
+                                    </div>
+                                    <div class="border rounded cursor-pointer">
+                                        <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                                             alt="Bacche di vaniglia Bourbon" 
+                                             class="w-full h-20 object-cover">
+                                    </div>
+                                    <div class="border rounded cursor-pointer">
+                                        <img src="https://images.unsplash.com/photo-1603569166289-1d8b47df575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                                             alt="Bacche di vaniglia Bourbon" 
+                                             class="w-full h-20 object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2">
+                            <div class="mb-6">
+                                <span class="bg-primary text-white text-xs px-2 py-1 rounded">BIO</span>
+                                <h1 class="title-font text-3xl md:text-4xl font-bold mt-4 mb-2">Bacche di Vaniglia Bourbon</h1>
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-600 ml-2">4.7 (128 recensioni)</span>
+                                </div>
+                                <p class="text-2xl font-bold text-primary mb-6">€24,90</p>
+                                <p class="text-gray-700 mb-6">
+                                    Le nostre bacche di vaniglia Bourbon del Madagascar sono selezionate a mano tra le migliori della regione di Sava. Ogni bacca è umida, carnosa e ricca di semi, con un aroma intenso e persistente che esalta qualsiasi preparazione.
+                                </p>
+                                
+                                <div class="mb-8">
+                                    <h3 class="font-bold text-lg mb-2">Formati disponibili:</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button class="border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-full transition">3 bacche</button>
+                                        <button class="border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-full transition">5 bacche</button>
+                                        <button class="bg-primary text-white px-4 py-2 rounded-full transition">10 bacche</button>
+                                        <button class="border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-full transition">25 bacche</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center mb-8">
+                                    <div class="flex items-center border rounded-full overflow-hidden">
+                                        <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200">-</button>
+                                        <span class="px-4">1</span>
+                                        <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200">+</button>
+                                    </div>
+                                    <button class="ml-4 bg-primary hover:bg-dark text-white px-6 py-3 rounded-full font-medium transition flex items-center">
+                                        <i class="fas fa-shopping-cart mr-2"></i> Aggiungi al carrello
+                                    </button>
+                                </div>
+                                
+                                <div class="border-t border-b border-gray-200 py-6 mb-6">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-truck text-primary mr-3"></i>
+                                        <span>Spedizione gratuita per ordini superiori a €50</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-undo text-primary mr-3"></i>
+                                        <span>Reso gratuito entro 30 giorni</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <h2 class="title-font text-2xl font-bold mb-4">Dettagli del prodotto</h2>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h3 class="font-bold">Origine:</h3>
+                                        <p>Regione di Sava, Madagascar</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Coltivazione:</h3>
+                                        <p>Biologica, sostenibile, impollinazione manuale</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Processo:</h3>
+                                        <p>Raccolta a mano, essiccazione naturale, selezione manuale</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Umidità:</h3>
+                                        <p>35-40% (bacche morbide e flessibili)</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Aroma:</h3>
+                                        <p>Note dolci, cremose con sentori di tabacco e frutta secca</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold">Conservazione:</h3>
+                                        <p>In contenitore ermetico al riparo da luce e umidità</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <h2 class="title-font text-2xl font-bold mb-4">Utilizzi in cucina</h2>
+                                <p class="mb-4">
+                                    Le nostre bacche di vaniglia sono perfette per:
+                                </p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Creme e dessert (creme brûlée, panna cotta, gelati)</li>
+                                    <li>Preparazioni al cioccolato</li>
+                                    <li>Sciroppi e liquori</li>
+                                    <li>Dolci da forno (biscotti, torte, muffin)</li>
+                                    <li>Piatti salati innovativi</li>
+                                </ul>
+                                <p class="mt-4">
+                                    Per utilizzarle, tagliare longitudinalmente la bacca e raschiare i semi con la parte non tagliente del coltello.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h2 class="title-font text-2xl font-bold mb-4">Certificazioni</h2>
+                                <div class="flex flex-wrap gap-4">
+                                    <img src="https://via.placeholder.com/100x60?text=Bio" alt="Certificazione biologica" class="h-12">
+                                    <img src="https://via.placeholder.com/100x60?text=FairTrade" alt="Certificazione FairTrade" class="h-12">
+                                    <img src="https://via.placeholder.com/100x60?text=Rainforest" alt="Certificazione Rainforest" class="h-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Product Reviews -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="title-font text-3xl font-bold mb-8 text-center">Recensioni</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-light p-6 rounded-lg shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400 mr-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="font-bold">Aroma eccezionale</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                "Ho provato molte vaniglie nella mia carriera di pasticciere, ma queste bacche sono davvero superiori. L'aroma è intenso e persistente, e la qualità è costante in ogni ordine."
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Marco P.</span>
+                                <span class="mx-2">•</span>
+                                <span>12/05/2023</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400 mr-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="font-bold">Qualità premium</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                "Le bacche sono sempre umide e piene di semi. Mi piace sapere che il mio acquisto sostiene direttamente i coltivatori malgasci. Il prezzo è giustificato dalla qualità eccezionale."
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="font-medium">Laura M.</span>
+                                <span class="mx-2">•</span>
+                                <span>28/04/2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-medium transition">
+                            Vedi tutte le recensioni
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Related Products -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <h2 class="title-font text-3xl font-bold mb-8 text-center">Potrebbero piacerti anche</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1603569166289-1d8b47df575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Caviale di vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Caviale di Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Semi di vaniglia estratti a mano, perfetti per una distribuzione uniforme del sapore.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€32,90</span>
+                                    <a href="product-caviale.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Polvere di vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Polvere di Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Vaniglia macinata finemente per un uso immediato in dolci e bevande.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€18,90</span>
+                                    <a href="product-polvere.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1603569283844-138131f829b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Kit Vaniglia Bourbon" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                    BIO
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-2">Kit Vaniglia Bourbon</h3>
+                                <p class="text-gray-600 mb-4">Bacche, caviale e polvere per scoprire tutte le forme della vaniglia.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">€65,90</span>
+                                    <a href="product-kit.html" class="bg-primary hover:bg-dark text-white px-4 py-2 rounded-full transition flex items-center">
+                                        Scopri di più
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sustainability Page (hidden by default) -->
+        <div id="sustainability-content" class="hidden">
+            <!-- Hero Section -->
+            <section class="relative py-24 bg-primary text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Il Nostro Impatto</h1>
+                    <p class="text-xl max-w-3xl mx-auto">
+                        Coltivare vaniglia con rispetto per le persone e l'ambiente è al centro di tutto ciò che facciamo.
+                    </p>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 origin-top-left"></div>
+            </section>
+            
+            <!-- Impact Numbers -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                        <div class="counter-container p-6">
+                            <div class="counter mb-2" data-target="200">0</div>
+                            <p class="text-gray-700">Coltivatori supportati</p>
+                        </div>
+                        <div class="counter-container p-6">
+                            <div class="counter mb-2" data-target="30">0</div>
+                            <p class="text-gray-700">% in più rispetto al mercato</p>
+                        </div>
+                        <div class="counter-container p-6">
+                            <div class="counter mb-2" data-target="5">0</div>
+                            <p class="text-gray-700">% reinvestito nelle comunità</p>
+                        </div>
+                        <div class="counter-container p-6">
+                            <div class="counter mb-2" data-target="100">0</div>
+                            <p class="text-gray-700">% agricoltura biologica</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Our Farmers -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1556910638-9a0c0ce96a8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Coltivatori di vaniglia in Madagascar" 
+                                 class="rounded-lg shadow-lg w-full floating-image">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">I Nostri Coltivatori</h2>
+                            <p class="text-gray-700 mb-4">
+                                Lavoriamo direttamente con oltre 200 piccoli coltivatori nella regione di Sava, in Madagascar. Ogni famiglia possiede in media 0,5 ettari di terreno dove coltiva vaniglia insieme ad altre piante alimentari.
+                            </p>
+                            <p class="text-gray-700 mb-4">
+                                Abbiamo stabilito un sistema di pagamento che garantisce ai nostri coltivatori un reddito stabile, indipendentemente dalle fluttuazioni del mercato globale della vaniglia.
+                            </p>
+                            <p class="text-gray-700 mb-6">
+                                Ogni anno organizziamo corsi di formazione sulle migliori tecniche di coltivazione biologica e di conservazione della vaniglia, aumentando così la qualità e il valore del loro raccolto.
+                            </p>
+                            <div class="bg-accent text-white p-4 rounded-lg">
+                                <p class="font-medium italic">
+                                    "Grazie a Bioro, ho potuto mandare tutti e tre i miei figli a scuola e costruire una casa più sicura per la mia famiglia." - Jean, coltivatore dal 2017
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Community Projects -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-12 text-center">Progetti per la Comunità</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-light rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e100327cf50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Scuola in Madagascar" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-3">Educazione</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Abbiamo costruito 3 scuole elementari e finanziato borse di studio per 45 studenti delle scuole superiori e università.
+                                </p>
+                                <div class="flex items-center text-primary font-medium">
+                                    <span>Scopri di più</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04df55010263?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Centro medico in Madagascar" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-3">Sanità</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Abbiamo ristrutturato un centro medico e finanziato campagne di vaccinazione che hanno raggiunto oltre 1.200 persone.
+                                </p>
+                                <div class="flex items-center text-primary font-medium">
+                                    <span>Scopri di più</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light rounded-lg overflow-hidden shadow-md">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Agricoltura sostenibile" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="title-font text-xl font-bold mb-3">Agricoltura Sostenibile</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Formiamo i coltivatori su tecniche agroforestali che aumentano la biodiversità e proteggono il suolo.
+                                </p>
+                                <div class="flex items-center text-primary font-medium">
+                                    <span>Scopri di più</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Environmental Commitment -->
+            <section class="py-16 bg-primary text-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2">
+                            <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Impegno Ambientale</h2>
+                            <p class="mb-4 text-light">
+                                La vaniglia è una coltura delicata che richiede un ecosistema intatto per prosperare. Per questo proteggiamo le foreste native che circondano le piantagioni.
+                            </p>
+                            <p class="mb-4 text-light">
+                                Tutta la nostra vaniglia è coltivata senza pesticidi o fertilizzanti chimici, preservando la salute del suolo e delle acque.
+                            </p>
+                            <p class="mb-6 text-light">
+                                Abbiamo piantato oltre 5.000 alberi nativi per creare corridoi ecologici tra le aree coltivate, favorendo la biodiversità.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="bg-dark p-4 rounded-lg flex items-center">
+                                    <i class="fas fa-recycle text-2xl text-secondary mr-3"></i>
+                                    <span>Imballaggi compostabili</span>
+                                </div>
+                                <div class="bg-dark p-4 rounded-lg flex items-center">
+                                    <i class="fas fa-leaf text-2xl text-secondary mr-3"></i>
+                                    <span>Zero plastica</span>
+                                </div>
+                                <div class="bg-dark p-4 rounded-lg flex items-center">
+                                    <i class="fas fa-tint text-2xl text-secondary mr-3"></i>
+                                    <span>Risparmio idrico</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Foresta in Madagascar" 
+                                 class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Certifications -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-12">Le Nostre Certificazioni</h2>
+                    
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <div class="bg-light p-6 rounded-lg shadow-md max-w-xs">
+                            <img src="https://via.placeholder.com/150x100?text=Organic" alt="Certificazione biologica" class="h-16 mx-auto mb-4">
+                            <h3 class="title-font text-xl font-bold mb-2">Biologico</h3>
+                            <p class="text-gray-700">
+                                Certificato UE e USDA per l'agricoltura biologica senza uso di sostanze chimiche.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md max-w-xs">
+                            <img src="https://via.placeholder.com/150x100?text=FairTrade" alt="Certificazione FairTrade" class="h-16 mx-auto mb-4">
+                            <h3 class="title-font text-xl font-bold mb-2">Fair Trade</h3>
+                            <p class="text-gray-700">
+                                Garantiamo condizioni di lavoro eque e un prezzo giusto per i coltivatori.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md max-w-xs">
+                            <img src="https://via.placeholder.com/150x100?text=Rainforest" alt="Certificazione Rainforest" class="h-16 mx-auto mb-4">
+                            <h3 class="title-font text-xl font-bold mb-2">Rainforest Alliance</h3>
+                            <p class="text-gray-700">
+                                Coltivazione che protegge la biodiversità e il benessere delle comunità.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md max-w-xs">
+                            <img src="https://via.placeholder.com/150x100?text=B-Corp" alt="Certificazione B Corp" class="h-16 mx-auto mb-4">
+                            <h3 class="title-font text-xl font-bold mb-2">B Corporation</h3>
+                            <p class="text-gray-700">
+                                Soddisfiamo i più alti standard di impatto sociale e ambientale.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6">Unisciti alla Nostra Missione</h2>
+                    <p class="max-w-2xl mx-auto text-gray-700 mb-8">
+                        Scegliendo Bioro, sostieni direttamente le comunità del Madagascar e proteggi un ecosistema unico al mondo.
+                    </p>
+                    <a href="products.html" class="inline-block bg-primary hover:bg-dark text-white px-8 py-4 rounded-full font-medium transition shadow-lg">
+                        Scopri i Nostri Prodotti
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="images/logo.png" alt="Bioro Logo" class="h-8">
+                    </div>
+                    <p class="mb-4 text-light">
+                        Vaniglia Bourbon del Madagascar, coltivata con rispetto per le persone e l'ambiente.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light hover:text-secondary transition"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Prodotti</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-bacche.html" class="text-light hover:text-secondary transition">Bacche di Vaniglia</a></li>
+                        <li><a href="product-caviale.html" class="text-light hover:text-secondary transition">Caviale di Vaniglia</a></li>
+                        <li><a href="product-polvere.html" class="text-light hover:text-secondary transition">Polvere di Vaniglia</a></li>
+                        <li><a href="products.html" class="text-light hover:text-secondary transition">Tutti i Prodotti</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Azienda</h3>
+                    <ul class="space-y-2">
+                        <li><a href="story.html" class="text-light hover:text-secondary transition">Chi Siamo</a></li>
+                        <li><a href="sustainability.html" class="text-light hover:text-secondary transition">Sostenibilità</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Blog</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Lavora con Noi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Contatti</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-secondary"></i>
+                            <span class="text-light">Via della Vaniglia 12, Milano</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-secondary"></i>
+                            <span class="text-light">+39 02 1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-secondary"></i>
+                            <span class="text-light">info@bioro.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-light text-sm mb-4 md:mb-0">
+                    &copy; 2025 Bioro. Tutti i diritti riservati.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Termini e Condizioni</a>
+                    <a href="#" class="text-light hover:text-secondary transition text-sm">Spedizioni</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+</html>

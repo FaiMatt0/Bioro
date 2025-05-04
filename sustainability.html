@@ -26,7 +26,10 @@
 </head>
 <body class="text-dark">
     <!-- Header -->
-    <header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-md" style="background-image: url('images/front page 2.jpg'); background-size: cover; background-position: center; position: relative;">
+        <!-- Overlay for better text visibility -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(44, 95, 45, 0.85); z-index: -1;"></div>
+        
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <a href="index.html" class="flex items-center space-x-2 group transition-transform hover:scale-105 duration-300 cursor-pointer">
@@ -71,10 +74,13 @@
         <!-- Hero Section -->
         <section class="relative py-24 bg-primary text-white">
             <div class="container mx-auto px-4 text-center">
-                <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Il Nostro Impatto</h1>
-                <p class="text-xl max-w-3xl mx-auto">
+                <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold mb-6 heading-animate">
+                    Il Nostro <span class="highlight-animate text-accent">Impatto</span>
+                </h1>
+                <p class="text-xl max-w-3xl mx-auto hero-fade-in delay-200">
                     Coltivare vaniglia con rispetto per le persone e l'ambiente è al centro di tutto ciò che facciamo.
                 </p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-8 hero-fade-in delay-300"></div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 origin-top-left"></div>
         </section>

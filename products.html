@@ -22,6 +22,7 @@
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popup.css">
 </head>
 <body class="text-dark">
     <!-- Header -->
@@ -35,6 +36,7 @@
             </div>
             
             <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-secondary transition">Home</a>
                 <a href="products.html" class="hover:text-secondary transition">Prodotti</a>
                 <a href="sustainability.html" class="hover:text-secondary transition">Sostenibilità</a>
                 <a href="story.html" class="hover:text-secondary transition">La Nostra Storia</a>
@@ -57,6 +59,7 @@
         <!-- Mobile menu -->
         <div class="md:hidden hidden bg-dark w-full py-4 px-4" id="mobile-menu">
             <div class="flex flex-col space-y-3">
+                <a href="index.html" class="hover:text-secondary transition py-2">Home</a>
                 <a href="products.html" class="hover:text-secondary transition py-2">Prodotti</a>
                 <a href="sustainability.html" class="hover:text-secondary transition py-2">Sostenibilità</a>
                 <a href="story.html" class="hover:text-secondary transition py-2">La Nostra Storia</a>
@@ -113,7 +116,7 @@
                     <!-- Product 2 -->
                     <div class="product-card bg-light rounded-lg overflow-hidden shadow-md transition duration-300">
                         <div class="relative">
-                            <img src="images/caviale.jpg" 
+                            <img src="images/prodotto 2.png" 
                                  alt="Caviale di vaniglia Bourbon" 
                                  class="w-full h-64 object-cover">
                             <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
@@ -229,7 +232,19 @@
                 <h2 class="title-font text-3xl md:text-4xl font-bold mb-12 text-center">Cosa Dicono i Nostri Clienti</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="bg-white p-6 rounded-lg shadow text-center relative">
+                        <!-- Google Logo -->
+                        <div class="absolute -top-5 -right-5 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
+                            <div class="flex items-center justify-center">
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                    <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                    <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                    <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
                         <div class="flex justify-center mb-4 text-yellow-400">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -244,7 +259,19 @@
                         <p class="text-sm text-gray-500">Pasticceria Dolce Vita, Milano</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="bg-white p-6 rounded-lg shadow text-center relative">
+                        <!-- Google Logo -->
+                        <div class="absolute -top-5 -right-5 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
+                            <div class="flex items-center justify-center">
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                    <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                    <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                    <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
                         <div class="flex justify-center mb-4 text-yellow-400">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -259,7 +286,19 @@
                         <p class="text-sm text-gray-500">Food blogger</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="bg-white p-6 rounded-lg shadow text-center relative">
+                        <!-- Google Logo -->
+                        <div class="absolute -top-5 -right-5 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
+                            <div class="flex items-center justify-center">
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                    <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                    <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                    <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
                         <div class="flex justify-center mb-4 text-yellow-400">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -316,7 +355,43 @@
                     </div>
                 </div>
                 
-                <!-- Rest of footer content same as index.html -->
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Prodotti</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-bacche.html" class="text-light hover:text-secondary transition">Bacche di Vaniglia</a></li>
+                        <li><a href="product-caviale.html" class="text-light hover:text-secondary transition">Caviale di Vaniglia</a></li>
+                        <li><a href="product-polvere.html" class="text-light hover:text-secondary transition">Polvere di Vaniglia</a></li>
+                        <li><a href="products.html" class="text-light hover:text-secondary transition">Tutti i Prodotti</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Azienda</h3>
+                    <ul class="space-y-2">
+                        <li><a href="story.html" class="text-light hover:text-secondary transition">Chi Siamo</a></li>
+                        <li><a href="sustainability.html" class="text-light hover:text-secondary transition">Sostenibilità</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Blog</a></li>
+                        <li><a href="#" class="text-light hover:text-secondary transition">Lavora con Noi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-bold mb-4">Contatti</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-secondary"></i>
+                            <span class="text-light">Via della Vaniglia 12, Milano</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-secondary"></i>
+                            <span class="text-light">+39 02 1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-secondary"></i>
+                            <span class="text-light">info@bioro.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
             <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
@@ -334,5 +409,9 @@
 
     <script src="js/main.js"></script>
     <script src="js/mobile.js"></script>
+    <script src="js/social-links.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

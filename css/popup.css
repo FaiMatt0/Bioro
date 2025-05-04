@@ -1,0 +1,125 @@
+.account-popup {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.account-popup::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.account-popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.account-popup.scale-100 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.account-popup.scale-0 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Common popup styles */
+.popup-container {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: top right;
+}
+
+.popup-container.scale-100 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.popup-container::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Cart popup specific styles */
+.cart-popup {
+    width: 350px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+    background-color: #F5F7F3;
+}
+
+.cart-item-remove {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.cart-item-remove:hover {
+    opacity: 1;
+    color: #ff4444;
+}
+
+.cart-quantity {
+    width: 24px;
+    text-align: center;
+}
+
+/* Animation for cart count */
+@keyframes cartBadgePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.cart-badge-animate {
+    animation: cartBadgePulse 0.5s ease-in-out;
+}
+
+/* Search popup specific styles */
+.search-popup {
+    width: 320px;
+}
+
+.search-popup input:focus {
+    box-shadow: 0 0 0 2px rgba(44, 95, 45, 0.2);
+}
+
+/* Animation for search suggestions */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.search-popup .flex-wrap a {
+    animation: fadeIn 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+.search-popup .flex-wrap a:nth-child(1) { animation-delay: 0.1s; }
+.search-popup .flex-wrap a:nth-child(2) { animation-delay: 0.2s; }
+.search-popup .flex-wrap a:nth-child(3) { animation-delay: 0.3s; }
+.search-popup .flex-wrap a:nth-child(4) { animation-delay: 0.4s; }
